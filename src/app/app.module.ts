@@ -21,13 +21,14 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {UserService} from "./services/UserService/user.service";
 
 import { ReactiveFormsModule } from '@angular/forms';
+import {FooterComponent} from "./public/footer/footer.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     //PageNotFoundComponent,
-    //FooterComponent,
+    FooterComponent,
     InicioSesionComponent,
     //RegistroComponent
   ],
