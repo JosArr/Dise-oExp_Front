@@ -1,5 +1,54 @@
 # HealthFood
 
+Este proyecto fue diseñado para el curso Diseño de Experimentos de Ingeniería de Software
+
+## Integrantes
+
+* Araujo Ingunza, Renzo Jose (u202113612)
+* Arrunategui Aguilar, Josue David (u202111033)
+* Chero Eme, Eduardo Andre (u20201F282)
+* Li Zegarra, Xiao Lian (u202118784)
+
+## Descripción
+
+HealthFood es una aplicación web que enfrenta el desafío de proporcionar una solución 
+conveniente y rápida para satisfacer sus necesidades alimentarias sin comprometer la 
+calidad y el valor nutricional de los alimentos preparados
+
+## Funcionalidades
+
+* Ordenar comida saludable de diferentes restaurantes
+* Visualizar las calorías de cada comida que estamos ordenando
+
+## Servicios a utilizar
+
+Para el desarrollo de la aplicación se utilizarán los siguientes servicios:
+* RestFULL API
+
+## Tecnologías a utilizar
+
+Para el desarrollo de la aplicación se utilizarán las siguientes tecnologías:
+* Angular
+* Firebase
+
+## Requerimientos
+
+* Node.js
+* Angular CLI
+* Firebase CLI
+
+## Complementes
+
+* Angular Material
+* Json-server
+
+## Base de Datos
+
+* Firebase Firestore
+* MongoDB
+
+## Especificaciones extras
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
 ## Development server
