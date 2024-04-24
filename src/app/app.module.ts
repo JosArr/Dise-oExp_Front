@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+    AppComponent,
     //PageNotFoundComponent,
     //FooterComponent,
     InicioSesionComponent,
@@ -45,7 +46,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule,
-    AppComponent,
   ],
   providers: [UserService],
 })

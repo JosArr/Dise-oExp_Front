@@ -1,11 +1,10 @@
 <div class="w-full h-[100vh]">
-  <mat-toolbar class="toolbar" color = "primary">
+  <mat-toolbar>
     <h1 class="logo">Health Food</h1>
     <div class="mat-spacer"></div>
-    <a mat-button *ngIf="!userService.LoggedIn" [routerLink]="">Iniciar Sesion</a>
-    <a mat-button *ngIf="!userService.LoggedIn" [routerLink]="">Registrarse</a>
+    <a mat-button  [routerLink]="'/iniciosesion'">Iniciar Sesion</a>
+    <a mat-button  [routerLink]="'/registro'">Registrarse</a>
     <a mat-button (click)="cerrarSesion()" *ngIf="userService.isLoggedIn">Cerrar Sesión</a>
   </mat-toolbar>
   <router-outlet></router-outlet>
-  <app-footer></app-footer>
 </div>
