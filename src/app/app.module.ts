@@ -47,7 +47,9 @@ import {FooterComponent} from "./public/footer/footer.component";
     MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule,
+
   ],
   providers: [UserService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

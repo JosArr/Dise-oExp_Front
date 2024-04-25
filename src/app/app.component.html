@@ -1,5 +1,5 @@
 <div class="w-full h-[100vh]">
-  <mat-toolbar>
+  <mat-toolbar class="toolbar" color="primary">
     <h1 class="logo">Health Food</h1>
     <div class="mat-spacer"></div>
     <a mat-button  [routerLink]="'/iniciosesion'">Iniciar Sesion</a>
@@ -7,4 +7,5 @@
     <a mat-button (click)="cerrarSesion()" *ngIf="userService.isLoggedIn">Cerrar Sesión</a>
   </mat-toolbar>
   <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </div>

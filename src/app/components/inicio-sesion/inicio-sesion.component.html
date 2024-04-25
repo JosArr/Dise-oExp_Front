@@ -10,6 +10,8 @@
       <input type="password" id="password" formControlName="correo" placeholder="Ingrese su correo">
     </div>
     <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesion</button>
-    <a>¿No tienes cuenta?</a><a routerLink="/registro"> Registrate aquí</a>
+    <a class="redirection">
+      <a>¿No tienes cuenta?</a><a class="registro-button" routerLink="/registro"> Registrate aquí</a>
+    </a>
   </form>
 </section>
