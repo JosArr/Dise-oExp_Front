@@ -30,7 +30,7 @@ import {FooterComponent} from "./public/footer/footer.component";
     //PageNotFoundComponent,
     FooterComponent,
     InicioSesionComponent,
-    //RegistroComponent
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
