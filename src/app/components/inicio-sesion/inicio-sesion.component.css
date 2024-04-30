@@ -1,5 +1,5 @@
 .LoginScreen{
-  background: url('banner.png') no-repeat fixed;
+  background: url('../../../assets/images/banner.png') no-repeat fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@
 form {
   border:3px solid #808000;
   background-color:  #D3F2CE;
-  border-radius: 20px;
+  border-radius: 45px;
   padding: 25px;
   width: 300px;
   height: 280px;

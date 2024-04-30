@@ -22,6 +22,7 @@ import {UserService} from "./services/UserService/user.service";
 
 import { ReactiveFormsModule } from '@angular/forms';
 import {FooterComponent} from "./public/footer/footer.component";
+import {FaqComponent} from "./components/faq/faq.component";
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {FooterComponent} from "./public/footer/footer.component";
     //PageNotFoundComponent,
     FooterComponent,
     InicioSesionComponent,
+    FaqComponent,
     RegistroComponent
   ],
   imports: [
