@@ -2,11 +2,12 @@
   <mat-toolbar class="toolbar" color="primary">
     <h1 class="logo">Health Food</h1>
     <div class="mat-spacer"></div>
+    <a class="buttons" mat-button *ngIf="userService.isLoggedIn" [routerLink]="'/profile'">Perfil</a>
     <a class="buttons" mat-button  [routerLink]="'/home'">Inicio</a>
     <a class="buttons" mat-button  [routerLink]="'/faq'">FAQ</a>
     <a class="buttons" mat-button  [routerLink]="'/iniciosesion'">Iniciar Sesion</a>
     <a class="buttons" mat-button  [routerLink]="'/registro'">Registrase</a>
-    <a class="buttons" mat-button (click)="cerrarSesion()" *ngIf="userService.isLoggedIn">Cerrar Sesión</a>
+    <a class="buttons" mat-button *ngIf="userService.isLoggedIn" (click)="cerrarSesion()">Cerrar Sesión</a>
   </mat-toolbar>
   <router-outlet></router-outlet>
   <app-footer></app-footer>

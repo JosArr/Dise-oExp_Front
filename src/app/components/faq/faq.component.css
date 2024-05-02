@@ -29,11 +29,13 @@
 }
 
 .btnfaq:hover {
-  background-color: #0056b3; /* Color de fondo azul oscuro al pasar el ratón */
+  background-color: #FFFFFF;
+  border: 2px solid #FFA726;
+  color: #007bff;
 }
 
 .preguntas-frecuentes{
-  background-color: #D3F2CE;
+  background-color: #97E896;
   padding: 30px;
   border:3px solid #D4E157;
   border-radius: 35px;

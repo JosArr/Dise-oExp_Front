@@ -23,16 +23,18 @@ import {UserService} from "./services/UserService/user.service";
 import { ReactiveFormsModule } from '@angular/forms';
 import {FooterComponent} from "./public/footer/footer.component";
 import {FaqComponent} from "./components/faq/faq.component";
+import {ProfileComponent} from "./components/profile/profile.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    //PageNotFoundComponent,
+    PageNotFoundComponent,
     FooterComponent,
     InicioSesionComponent,
     FaqComponent,
-    RegistroComponent
+    RegistroComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
