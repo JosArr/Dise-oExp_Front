@@ -1,0 +1,48 @@
+<section class="profile">
+  <div class="profile-info">
+    <img src="assets/images/profile-image.png" alt="Imagen de perfil" class="profile-image">
+    <div class="user-details">
+      <h2>Abraham Estrada</h2>
+      <p class="uppercase-text">elkchudovsky03&#64;gmail.com</p>
+    </div>
+    <hr class="divider-line">
+  </div>
+  <div class="profile-links">
+    <div class="profile-link">
+      <i class="fas fa-user"></i>
+      <!--<button class="profile-button" (click)="showProfilePopup()">Mis Datos</button>-->
+      <a class="profile-button" mat-button (click)="showProfilePopup()">Mis Datos</a>
+    </div>
+    <div class="profile-link">
+      <i class="fas fa-lock"></i>
+      <a class="profile-button" mat-button>Acceso y seguridad</a>
+    </div>
+    <div class="profile-link">
+      <i class="fas fa-cog"></i>
+      <a class="profile-button" mat-button>Configuración</a>
+    </div>
+    <div class="profile-link">
+      <i class="fas fa-question-circle"></i>
+      <a class="profile-button" mat-button>Ayuda</a>
+    </div>
+    <div class="profile-link">
+      <i class="fas fa-credit-card"></i>
+      <a class="profile-button" mat-button>Cerrar Sesion</a>
+    </div>
+  </div>
+  <div class="profile-popup" *ngIf="showPopup">
+    <div class="profile-popup-content">
+      <div class="popup-profile-info">
+        <h3>Foto de Perfil</h3>
+        <img src="assets/images/profile-image.png" alt="Imagen de perfil" class="popup-profile-image">
+        <div class="popup-user-details">
+          <h3>Nombre</h3>
+          <h3>Apellidos</h3>
+          <h3>Correo Electrónico</h3>
+          <h3>Teléfono</h3>
+          <a class="update-button" mat-button>Actualizar Datos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
