@@ -7,17 +7,33 @@ import {UserService} from "../../services/UserService/user.service";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
+  nombre: string = 'Abraham';
+  apellidos: string = 'Estrada';
+  correo: string = 'elkchudovsky03@gmail.com';
+  telefono: string = '938422157';
+
   nombreUsuario: string = '';
   correoElectronico: string = '';
   nombreEditado: string = '';
   correoEditado: string = '';
-  idioma: string = 'ES';
   editandoNombre: boolean = false;
   editandoCorreo: boolean = false;
-  editandoIdioma: boolean = false;
   fotoPerfil: string='';
   showPopup = false;
+
   constructor(private userService: UserService) {}
+  menuItems = [
+    { icon: 'fa fa-user', text: 'Mis Datos' },
+    { icon: 'fa fa-lock', text: 'Acceso y Seguridad' },
+    { icon: 'fa fa-cog', text: 'Configuración' },
+    { icon: 'fa fa-question-circle', text: 'Ayuda' },
+    { icon: 'fa fa-sign-out', text: 'Cerrar Sesión' }
+  ];
+
+  onSelect(item: any): void {
+    console.log('Selected:', item.text);
+  }
+
   ngOnInit(): void {
 
     const usuarioLogueado = this.userService.getUsuarioLogueado();
@@ -30,13 +46,7 @@ export class ProfileComponent implements OnInit{
   showProfilePopup() {
     this.showPopup = !this.showPopup;
   }
-  toggleEditIdioma() {
-    this.editandoIdioma = !this.editandoIdioma;
-  }
 
-  guardarIdioma() {
-    this.editandoIdioma = false;
-  }
 
   guardarNombre() {
     this.nombreUsuario = this.nombreEditado;
@@ -78,9 +88,4 @@ export class ProfileComponent implements OnInit{
     this.editandoCorreo = true;
   }
 
-  opcionesIdioma: { nombre: string, codigo: string }[] = [
-    { nombre: 'ESPAÑOL', codigo: 'ES' },
-    { nombre: 'INGLÉS', codigo: 'EN' },
-    { nombre: 'PORTUGUÉS', codigo: 'PT' }
-  ];
 }

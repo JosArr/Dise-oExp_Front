@@ -7,42 +7,36 @@
     </div>
     <hr class="divider-line">
   </div>
-  <div class="profile-links">
-    <div class="profile-link">
-      <i class="fas fa-user"></i>
-      <!--<button class="profile-button" (click)="showProfilePopup()">Mis Datos</button>-->
-      <a class="profile-button" mat-button (click)="showProfilePopup()">Mis Datos</a>
-    </div>
-    <div class="profile-link">
-      <i class="fas fa-lock"></i>
-      <a class="profile-button" mat-button>Acceso y seguridad</a>
-    </div>
-    <div class="profile-link">
-      <i class="fas fa-cog"></i>
-      <a class="profile-button" mat-button>Configuración</a>
-    </div>
-    <div class="profile-link">
-      <i class="fas fa-question-circle"></i>
-      <a class="profile-button" mat-button>Ayuda</a>
-    </div>
-    <div class="profile-link">
-      <i class="fas fa-credit-card"></i>
-      <a class="profile-button" mat-button>Cerrar Sesion</a>
-    </div>
+  <div class="menu-container">
+    <button class="menu-button" *ngFor="let item of menuItems" (click)="showProfilePopup()">
+      <i class="{{ item.icon }}"></i>
+      <span>{{ item.text }}</span>
+    </button>
   </div>
-  <div class="profile-popup" *ngIf="showPopup">
-    <div class="profile-popup-content">
-      <div class="popup-profile-info">
-        <h3>Foto de Perfil</h3>
-        <img src="assets/images/profile-image.png" alt="Imagen de perfil" class="popup-profile-image">
-        <div class="popup-user-details">
-          <h3>Nombre</h3>
-          <h3>Apellidos</h3>
-          <h3>Correo Electrónico</h3>
-          <h3>Teléfono</h3>
-          <a class="update-button" mat-button>Actualizar Datos</a>
+</section>
+<div class="profile-popup" *ngIf="showPopup">
+  <div class="profile-popup-content">
+    <div class="popup-profile-info">
+      <a>Mis Datos</a>
+      <div class="popup-user-details">
+        <div>
+          <label for="name">Nombre: </label>
+          <input type="name" id="name" [value]="nombre" name="nombre">
         </div>
+        <div>
+          <label for="lastname">Apellidos: </label>
+          <input type="lastname" id="lastname" [value]="apellidos" name="apellidos">
+        </div>
+        <div>
+          <label for="email">Correo Electrónico: </label>
+          <input type="email"  id="email" [value]="correo" name="correo">
+        </div>
+        <div>
+          <label for="phone">Teléfono: </label>
+          <input type="phone" id="phone" [value]="telefono" name="telefono">
+        </div>
+        <a class="update-button" mat-button>Actualizar Datos</a>
       </div>
     </div>
   </div>
-</section>
+</div>

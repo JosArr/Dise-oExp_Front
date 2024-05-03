@@ -22,12 +22,16 @@
 }
 
 .profile-button{
-  border-radius: 40px;
+  text-align: left !important;
+  border-radius: 15px;
   color: #8B4513;
   background-color: #97E896;
   padding: 10px;
+  width: 350px;
+  height: 40px;
 }
 .profile-button:hover{
+  text-align: left !important;
   color: #28AE61;
   background-color: #F2F2F2;
   border-radius: 40px;
@@ -63,65 +67,66 @@
   margin: 0;
 }
 
+.menu-container {
+  padding: 10px;
+  width: 200px;
+}
 
+.menu-button {
+  background-color: #97E896;
+  border: none;
+  border-radius: 15px;
+  color: #8B4513;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 250px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+}
 
-.profile-links {
+.menu-button i {
+  margin-right: 10px;
+}
+
+.menu-button:hover {
+  background-color: #F2F2F2;
+  border: 2px solid #FFA726;
+  color: #28AE61;
+}
+
+.profile-form {
   margin-top: 50px;
-  text-align: left;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 .uppercase-text {
   text-transform: uppercase;
 }
-.profile-link {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 15px;
-  font-size: 18px;
-  width: 100%;
+
+input[type="name"], [type="lastname"], [type="email"],input[type="phone"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: black;
 }
 
-
-.profile-link span {
-  font-size: 30px;
-  flex: 1;
-}
-.profile-link button {
-  font-size: 30px;
-}
-
-.profile-link i.fa-credit-card {
-  margin-right: 10px;
-  font-size: 28px;
-  margin-right: 30px;
-}
-.profile-link i.fa-cog{
-  margin-right: 10px;
-  font-size: 28px;
-  margin-right: 30px;
-}
-.profile-link i.fa-lock{
-  margin-right: 10px;
-  font-size: 28px;
-  margin-right: 30px;
-}
-.profile-link i.fa-user{
-  margin-right: 10px;
-  font-size: 28px;
-  margin-right: 30px;
-}
-.profile-link i.fa-question-circle{
-  margin-right: 10px;
-  font-size: 28px;
-  margin-right: 30px;
-}
 .profile-popup {
-  width: 55%;
-  height: 65%;
+  color: #8B4513;
+  width: 450px;
+  height: 400px;
   position: absolute;
   left: 40%;
   top: 30%;
-  background-color: #edebeb;
+  background-color: #7EC8E3;
+  border: 3px solid #FFA726;
   border-radius: 20px;
 }
 .popup-profile-info{
