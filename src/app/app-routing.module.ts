@@ -10,6 +10,7 @@ import {OrderComponent} from "./components/order/order.component";
 
 
 const routes: Routes = [
+  {path: 'order', component: OrderComponent},
   { path: 'iniciosesion',component:InicioSesionComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'home', component: HomeComponent},
@@ -17,7 +18,6 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
-  {path: 'order', component: OrderComponent}
 ];
 
 @NgModule({

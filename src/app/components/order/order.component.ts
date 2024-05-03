@@ -3,7 +3,7 @@ import {Component, Input} from '@angular/core';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
-  styleUrl: './order.component.css'
+  styleUrls: ['./order.component.css']
 })
 export class OrderComponent {
   @Input() dish: any;
@@ -61,7 +61,6 @@ export class OrderComponent {
     console.log('Added to card');
   }
 }
-// card.component.ts
 
 
 
