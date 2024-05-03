@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {FooterComponent} from "./public/footer/footer.component";
 import {FaqComponent} from "./components/faq/faq.component";
 import {ProfileComponent} from "./components/profile/profile.component";
+import {OrderComponent} from "./components/order/order.component";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {ProfileComponent} from "./components/profile/profile.component";
     InicioSesionComponent,
     FaqComponent,
     RegistroComponent,
-    ProfileComponent
+    ProfileComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

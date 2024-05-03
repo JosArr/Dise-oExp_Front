@@ -6,6 +6,8 @@ import {NgModule} from "@angular/core";
 import {HomeComponent} from "./components/home/home.component";
 import {FaqComponent} from "./components/faq/faq.component";
 import {ProfileComponent} from "./components/profile/profile.component";
+import {OrderComponent} from "./components/order/order.component";
+
 
 const routes: Routes = [
   { path: 'iniciosesion',component:InicioSesionComponent},
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
+  {path: 'order', component: OrderComponent}
 ];
 
 @NgModule({
