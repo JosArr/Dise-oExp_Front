@@ -25,6 +25,7 @@ import {FooterComponent} from "./public/footer/footer.component";
 import {FaqComponent} from "./components/faq/faq.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {OrderComponent} from "./components/order/order.component";
+import {PaymentComponent} from "./components/payment/payment.component";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {OrderComponent} from "./components/order/order.component";
     FaqComponent,
     RegistroComponent,
     ProfileComponent,
-    OrderComponent
+    OrderComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

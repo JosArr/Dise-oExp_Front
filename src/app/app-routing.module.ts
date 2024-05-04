@@ -7,10 +7,12 @@ import {HomeComponent} from "./components/home/home.component";
 import {FaqComponent} from "./components/faq/faq.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {OrderComponent} from "./components/order/order.component";
+import {PaymentComponent} from "./components/payment/payment.component";
 
 
 const routes: Routes = [
-  {path: 'order', component: OrderComponent},
+  { path: 'order', component: OrderComponent},
+  { path: 'payment', component: PaymentComponent},
   { path: 'iniciosesion',component:InicioSesionComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'home', component: HomeComponent},
