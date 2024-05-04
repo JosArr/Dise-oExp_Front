@@ -60,6 +60,13 @@ export class OrderComponent {
   addToCard() {
     console.log('Added to card');
   }
+  menuToolbar = [
+    { label: 'Promociones' },
+    { label: 'Fit Food' },
+    { label: 'Desayunos' },
+    { label: 'Almuerzos' },
+    { label: 'Cenas' }
+  ];
 }
 
 
