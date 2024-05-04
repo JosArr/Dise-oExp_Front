@@ -10,33 +10,36 @@ export class FaqComponent {
   @ViewChild(MatPaginator,{static:false}) Paginator!:MatPaginator
   preguntas=[
     {
-      texto: "¿Los precios de los combustibles son los más confiables?",
-      respuesta: "Sí, trabajamos constantemente para ofrecer precios competitivos y confiables.",
+      texto: "¿Qué tipo de productos puedo encontrar en HealthFood?",
+      respuesta: "En HealthFood ofrecemos una variedad de alimentos saludables y orgánicos, " +
+        "como frutas frescas, verduras, suplementos nutricionales y opciones sin gluten o veganas.",
       mostrarRespuesta: false
     },
     {
-      texto: "¿Las promociones tienen fecha de caducidad?",
-      respuesta: "Sí, todas nuestras promociones tienen una fecha de caducidad. Consulta los detalles en cada oferta.",
+      texto: "¿De dónde provienen sus productos?",
+      respuesta: "Trabajamos con proveedores locales y distribuidores de " +
+        "confianza para ofrecer productos frescos y de alta calidad.",
       mostrarRespuesta: false
     },
     {
-      texto: "¿Cómo solicito las promociones en el grifo?",
-      respuesta: "Puedes solicitar nuestras promociones en el grifo presentando tu tarjeta de cliente frecuente o al hacer una compra.",
+      texto: "¿HealthFood ofrece opciones para personas con dietas específicas, como veganos o celíacos?",
+      respuesta: "Sí, tenemos productos para veganos, sin gluten y otras necesidades dietéticas especiales.",
       mostrarRespuesta: false
     },
     {
-      texto: "¿Cuál es la calidad de los combustibles que ofrecen?",
-      respuesta: "Nos enorgullece ofrecer combustibles de alta calidad que cumplen con las normativas más estrictas de seguridad y medio ambiente.",
+      texto: "¿Cuál es la política de devolución de HealthFood?",
+      respuesta: "Si no estás satisfecho, contáctanos dentro de los 30 días para discutir opciones de devolución, " +
+        "reembolso o cambio.",
       mostrarRespuesta: false
     },
     {
-      texto: "¿Cuál es el horario de funcionamiento del grifo?",
-      respuesta: "Nuestro grifo está abierto las 24 horas del día, los 7 días de la semana para tu conveniencia.",
+      texto: "¿HealthFood ofrece asesoramiento nutricional?",
+      respuesta: "Nuestro equipo de expertos en nutrición está disponible para brindar asesoramiento personalizado.",
       mostrarRespuesta: false
     },
     {
-      texto: "¿Aceptan tarjetas de crédito o débito en el grifo?",
-      respuesta: "Sí, aceptamos tarjetas de crédito y débito como forma de pago en todas nuestras estaciones de servicio.",
+      texto: "¿Cómo puedo mantenerme actualizado sobre ofertas y eventos de HealthFood?",
+      respuesta: "Suscríbete a nuestro boletín o sigue nuestras redes sociales para recibir noticias y promociones.",
       mostrarRespuesta: false
     }
   ];
