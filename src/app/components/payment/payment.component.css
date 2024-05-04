@@ -15,11 +15,25 @@
   width: 85%;
 }
 
+.button-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cuentas{
+  margin-top: 120px;
+  margin-left: 50px;
+}
+
 .pay{
   color: #8B4513;
   background-color: #FFA726;
   padding: 15px;
   border-radius: 20px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .pay:hover{
@@ -28,17 +42,33 @@
   border: 2px solid #FFA726;
 }
 
-.deposita, .data-cuenta, .data-interbancaria{
+.deposita, .data-cuenta, .data-interbancaria, .data-cuenta h4, .data-interbancaria h4{
   color: #8B4513;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: initial;
   font-style: normal;
 }
 
 .deposita{
   font-size: 35px;
-  margin-top: 15px;
+  margin-top: 50px;
   margin-left: 15px;
   margin-bottom: 40px;
+  font-weight: 600;
 }
+
+.data-cuenta, .data-interbancaria{
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.data-cuenta p, .data-cuenta h4, .data-interbancaria p, .data-interbancaria h4 {
+  display: inline;
+}
+
+.data-interbancaria{
+  margin-top: 35px;
+}
+
+
