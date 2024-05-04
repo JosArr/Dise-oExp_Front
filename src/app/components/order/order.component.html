@@ -1,12 +1,12 @@
 <section class="order">
-  <mat-toolbar class="toolbar">
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-      <div fxFlex="20" *ngFor="let item of menuToolbar">
-        <button mat-button>
-          <span>{{item.label}}</span>
-        </button>
-      </div>
+  <mat-toolbar class="toolbar-food">
+    <div class="food-container">
+      <button class="food-button" *ngFor="let item of menuToolbar">
+        <i class="{{ item.icon }}"></i>
+        <span>{{ item.label }}</span>
+      </button>
     </div>
+
   </mat-toolbar>
   <div class="card">
     <img src="assets/images/sushi-salmon-aguacate.jpg" alt="Sushi de Salmón con palta">

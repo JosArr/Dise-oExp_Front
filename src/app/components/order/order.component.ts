@@ -61,11 +61,11 @@ export class OrderComponent {
     console.log('Added to card');
   }
   menuToolbar = [
-    { label: 'Promociones' },
-    { label: 'Fit Food' },
-    { label: 'Desayunos' },
-    { label: 'Almuerzos' },
-    { label: 'Cenas' }
+    { icon: 'fa fa-tag',label: 'Promociones' },
+    { icon: 'fa fa-apple-whole',label: 'Fit Food' },
+    { icon: 'fa fa-mug-saucer',label: 'Desayunos' },
+    { icon: 'fa fa-utensils',label: 'Almuerzos' },
+    { icon: 'fa fa-bowl-food',label: 'Cenas' }
   ];
 }
 
