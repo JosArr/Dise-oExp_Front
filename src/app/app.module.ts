@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-// @ts-ignore
 import {AppRoutingModule} from "./app-routing.module";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

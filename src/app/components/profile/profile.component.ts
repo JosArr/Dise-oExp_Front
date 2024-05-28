@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/UserService/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -7,27 +8,26 @@ import {UserService} from "../../services/UserService/user.service";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
-  nombre: string = 'Abraham';
-  apellidos: string = 'Estrada';
-  correo: string = 'elkchudovsky03@gmail.com';
-  telefono: string = '938422157';
 
   nombreUsuario: string = '';
+  nombre: string = '';
+  apellido: string = '';
   correoElectronico: string = '';
+  telefono: string = '';
   nombreEditado: string = '';
   correoEditado: string = '';
   editandoNombre: boolean = false;
   editandoCorreo: boolean = false;
-  fotoPerfil: string='';
+  fotoPerfil: string = '';
   showPopup = false;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
+
   menuItems = [
     { icon: 'fa fa-user', text: 'Mis Datos' },
     { icon: 'fa fa-lock', text: 'Acceso y Seguridad' },
     { icon: 'fa fa-cog', text: 'Configuración' },
-    { icon: 'fa fa-question-circle', text: 'Ayuda' },
-    { icon: 'fa fa-sign-out', text: 'Cerrar Sesión' }
+    { icon: 'fa fa-question-circle', text: 'Ayuda' }
   ];
 
   onSelect(item: any): void {
@@ -35,12 +35,12 @@ export class ProfileComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
     const usuarioLogueado = this.userService.getUsuarioLogueado();
     if (usuarioLogueado) {
       this.nombreUsuario = usuarioLogueado.nombre + ' ' + usuarioLogueado.apellido;
       this.correoElectronico = usuarioLogueado.correo;
-      this.fotoPerfil=usuarioLogueado.perfil;
+      this.telefono = usuarioLogueado.telefono;
+      this.fotoPerfil = usuarioLogueado.perfil;
     }
   }
   showProfilePopup() {
@@ -88,4 +88,8 @@ export class ProfileComponent implements OnInit{
     this.editandoCorreo = true;
   }
 
+  cerrarSesion(){
+    this.userService.cerrarSesion();
+    this.router.navigate(['/iniciosesion']);
+  }
 }

@@ -30,7 +30,7 @@ export class InicioSesionComponent implements OnInit{
           console.log('Inicio de sesión exitoso');
           this.userService.setUsuarioLogueado(user);
 
-          this.router.navigate(['/TODO']);
+          this.router.navigate(['/home']);
         } else {
           console.log('Inicio de sesión fallido');
         }

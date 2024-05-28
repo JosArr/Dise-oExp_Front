@@ -15,9 +15,4 @@ export class AppComponent {
       { path: '/iniciosesion', title: 'Iniciar Sesion' },
       { path: '/registro', title: 'Registro' },
     ];
-
-    cerrarSesion(){
-      this.userService.cerrarSesion();
-      this.router.navigate(['/iniciosesion']);
-    }
 }
