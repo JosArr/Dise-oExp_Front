@@ -25,6 +25,7 @@ import {FaqComponent} from "./components/faq/faq.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {OrderComponent} from "./components/order/order.component";
 import {PaymentComponent} from "./components/payment/payment.component";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import {PaymentComponent} from "./components/payment/payment.component";
     ReactiveFormsModule,
 
   ],
-  providers: [UserService],
+  providers: [UserService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
