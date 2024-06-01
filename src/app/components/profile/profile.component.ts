@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit{
   nombreUsuario: string = '';
   nombre: string = '';
   apellido: string = '';
-  correoElectronico: string = '';
+  correoElectronico: string =  '';
   telefono: string = '';
   nombreEditado: string = '';
   correoEditado: string = '';
