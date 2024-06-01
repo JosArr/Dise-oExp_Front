@@ -29,13 +29,11 @@ Para el desarrollo de la aplicación se utilizarán los siguientes servicios:
 
 Para el desarrollo de la aplicación se utilizarán las siguientes tecnologías:
 * Angular
-* Firebase
 
 ## Requerimientos
 
 * Node.js
 * Angular CLI
-* Firebase CLI
 
 ## Complementes
 
@@ -44,7 +42,6 @@ Para el desarrollo de la aplicación se utilizarán las siguientes tecnologías:
 
 ## Base de Datos
 
-* Firebase Firestore
 * MongoDB
 
 ## Especificaciones extras
