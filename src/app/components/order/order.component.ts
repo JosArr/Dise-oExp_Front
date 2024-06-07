@@ -1,73 +1,33 @@
-import {Component, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { FoodsService } from '../../services/FoodService/foods.service';
 
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent {
-  @Input() dish: any;
-  combos = [{
-    name: 'Combo "Sabores del mar"',
-    image: 'assets/images/sushi-salmon-aguacate.jpg',
-    description: 'Sushi roll de salmón y palta + Sopa de pescado con vegetales',
-    calories: '300 + 200 kcal',
-    proteins: '15 + 10 g',
-    fats: '10 + 5 g',
-    price: 'S/ 28.90',
-  }, {
-    name: 'Combo "Fusión Peruana"',
-    image: 'assets/images/lomo-saltado.jpg',
-    description: 'Lomo saltado + Causa rellena de atún',
-    calories: '400 + 250 kcal',
-    proteins: '20  +  10 g',
-    fats: '15  +  10  g',
-    price: 'S/ 28.90',
-  }, {
-    name: 'Combo "Peruvian Delight"',
-    image: 'assets/images/tacutacu-lomo.jpg',
-    description: 'Tacu tacu con lomo saltado + Ají de gallina con arroz integral',
-    calories: '500 + 250 kcal',
-    proteins: '30  +  15 g',
-    fats: '20  +  18  g',
-    price: 'S/ 28.90',
-  }, {
-    name: 'Combo "Cocina Criolla"',
-    image: 'assets/images/seco-de-cordero.jpg',
-    description: 'Ají de gallina con arroz + Seco de cordero con frejoles y arroz integral',
-    calories: '500 + 450 kcal',
-    proteins: '20  +  25 g',
-    fats: '25  +  20  g',
-    price: 'S/ 28.90',
-  }, {
-    name: 'Combo "Criollo Especial"',
-    image: 'assets/images/arroz-con-pato.jpg',
-    description: 'Arroz con pato + Chupe de camarones',
-    calories: '450 + 400 kcal',
-    proteins: '25  +  20 g',
-    fats: '20  +  15  g',
-    price: 'S/ 28.90',
-  }, {
-    name: 'Combo "Vegetariano Fresco"',
-    image: 'assets/images/ensalada-de-quinoa.jpg',
-    description: 'Ensalada de quinoa con vegetales frescos +  Papa rellena de espinacas y queso',
-    calories: '300 + 250 kcal',
-    proteins: '10  +  8 g',
-    fats: '10  +  10  g',
-    price: 'S/ 28.90',
-  }];
+export class OrderComponent implements OnInit {
+  foods: any[] = [];
 
-  addToCard() {
-    console.log('Added to card');
+  constructor(private foodService: FoodsService) { }
+
+  ngOnInit(): void {
+    this.loadFoods('all');
   }
-  menuToolbar = [
-    { icon: 'fa fa-tag',label: 'Promociones' },
-    { icon: 'fa fa-apple-whole',label: 'Fit Food' },
-    { icon: 'fa fa-mug-saucer',label: 'Desayunos' },
-    { icon: 'fa fa-utensils',label: 'Almuerzos' },
-    { icon: 'fa fa-bowl-food',label: 'Cenas' }
-  ];
+
+  loadFoods(type: string): void {
+    if (type === 'all') {
+      this.foodService.getFoods().subscribe((data: any) => {
+        this.foods = data;
+      });
+    } else {
+      this.foodService.getFoodsByType(type).subscribe((data: any) => {
+        this.foods = data;
+      });
+    }
+  }
+
+  addToCart(food: any): void {
+    console.log(food);
+  }
 }
-
-
-
