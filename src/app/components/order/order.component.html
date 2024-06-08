@@ -1,13 +1,14 @@
 <section class="order">
-  <mat-button-toggle-group (change)="loadFoods($event.value)">
-    <mat-button-toggle value="fit">Fit Food</mat-button-toggle>
-    <mat-button-toggle value="desayuno">Desayunos</mat-button-toggle>
-    <mat-button-toggle value="almuerzo">Almuerzos</mat-button-toggle>
-    <mat-button-toggle value="cena">Cenas</mat-button-toggle>
+  <mat-button-toggle-group (change)="loadFoods($event.value)" class="toggle-group">
+    <mat-button-toggle value="fit"><i class="fa fa-apple-whole"></i> Fit Food</mat-button-toggle>
+    <mat-button-toggle value="desayuno"><i class="fa fa-mug-saucer"></i> Desayunos</mat-button-toggle>
+    <mat-button-toggle value="almuerzo"><i class="fa fa-utensils"></i> Almuerzos</mat-button-toggle>
+    <mat-button-toggle value="cena"><i class="fa fa-bowl-food"></i> Cenas</mat-button-toggle>
   </mat-button-toggle-group>
 
+
   <div *ngFor="let food of foods" class="food-card">
-    <mat-card>
+    <mat-card class="card">
       <mat-card-header>
         <mat-card-title>{{ food.name }}</mat-card-title>
         <mat-card-subtitle>{{ food.description }}</mat-card-subtitle>

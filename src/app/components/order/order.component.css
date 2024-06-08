@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
 .card {
@@ -54,46 +54,49 @@
 .card .price{
   color: #8B4513;
 }
-.toolbar-food{
-  background-color: transparent;
-  flex-direction: row-reverse;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+
+.card {
+  width: 300px;
 }
 
-.food-button{
-  background-color: #D3F2CE;
+mat-button-toggle{
   color: #8B4513;
-  border: transparent;
-  display: inline;
-  border-radius: 20px;
-  cursor: pointer;
+}
+
+mat-button-toggle-group {
+  display: flex;
+  justify-content: space-around;
+  background-color: #D3F2CE;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+mat-button-toggle-group mat-button-toggle {
+
+  background-color: #D3F2CE;
+  border: none;
+  border-radius: 50px;
+  width: 250px;
   margin-left: 20px;
   margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 10px;
-  width: 250px;
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 15px;
-  font-weight: normal;
-  font-style: normal;
+  height: 50px;
 }
 
-.food-button:hover{
+mat-button-toggle-group mat-button-toggle i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+mat-button-toggle-group mat-button-toggle:hover {
+  color: #007BFF;
   background-color: #F2F2F2;
   border: 2px solid #FFA726;
 }
 
-mat-card {
-  width: 300px;
-}
-
-mat-button-toggle-group {
-  margin-bottom: 20px;
+mat-button-toggle-group mat-button-toggle.mat-button-toggle-checked {
+  color: #007BFF;
 }
