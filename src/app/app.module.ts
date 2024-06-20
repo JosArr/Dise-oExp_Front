@@ -28,6 +28,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { OrderComponent } from './components/order/order.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {ShopCartComponent} from "./components/shop-cart/shop-cart.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     RegistroComponent,
     ProfileComponent,
     OrderComponent,
-    PaymentComponent
+    PaymentComponent,
+    ShopCartComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,21 +18,21 @@ export class InicioSesionComponent implements OnInit{
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      correo: ['', [Validators.required, Validators.email]],
-      contrasena: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      this.userService.getUserByEmail(this.loginForm.value.correo).subscribe(user => {
-        if (user && user.contrasena === this.loginForm.value.contrasena) {
-          console.log('Inicio de sesión exitoso');
+      this.userService.getUserByEmail(this.loginForm.value.email).subscribe(user => {
+        if (user && user.password === this.loginForm.value.password) {
+          alert('Inicio de sesión exitoso');
           this.userService.setUsuarioLogueado(user);
 
           this.router.navigate(['/order']);
         } else {
-          console.log('Inicio de sesión fallido');
+          alert('Inicio de sesión fallido');
         }
       });
     }

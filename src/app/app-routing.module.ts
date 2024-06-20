@@ -8,6 +8,7 @@ import {FaqComponent} from "./components/faq/faq.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {OrderComponent} from "./components/order/order.component";
 import {PaymentComponent} from "./components/payment/payment.component";
+import {ShopCartComponent} from "./components/shop-cart/shop-cart.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'registro',component:RegistroComponent},
   { path: 'faq', component: FaqComponent},
+  { path: 'shopcart', component: ShopCartComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

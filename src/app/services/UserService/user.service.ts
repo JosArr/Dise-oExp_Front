@@ -8,37 +8,37 @@ import {map, Observable} from "rxjs";
 })
 
 export class UserService {
-  private apiURL = 'https://my-json-server.typicode.com/JosArr/database/usuarios';
+  private userApiURL = 'http://localhost:8080/api/v1/users';
   isLoggedIn: boolean = false;
   usuarioLogueado: any;
   constructor(private http: HttpClient) { }
 
   addUser(user: any): Observable<any> {
-    return this.http.post<any>(this.apiURL, user);
+    return this.http.post<any>(this.userApiURL, user);
   }
 
   getUserByEmail(email: string): Observable<any> {
-    return this.http.get<any[]>(this.apiURL).pipe(
-      map(users => users.find(user => user.correo === email))
+    return this.http.get<any[]>(this.userApiURL).pipe(
+      map(users => users.find(user => user.email === email))
     );
   }
   editarUsuario(usuario: any): Observable<any> {
-    const url = `${this.apiURL}/${usuario.id}`;
+    const url = `${this.userApiURL}/${usuario.id}`;
     return this.http.put<any>(url, usuario);
   }
   getUserPassword(): Observable<string[]> {
-    return this.http.get<any[]>(this.apiURL).pipe(
-      map(users => users.map(user => user.contrasena))
+    return this.http.get<any[]>(this.userApiURL).pipe(
+      map(users => users.map(user => user.password))
     );
   }
   loginUser(email: string, password: string): Observable<any> {
     const loginData = {
-      correo: email,
-      contrasena: password,
+      email: email,
+      password: password,
     };
 
 
-    return this.http.post<any>(`${this.apiURL}/login`, loginData).pipe(
+    return this.http.post<any>(`${this.userApiURL}/login`, loginData).pipe(
       map((response) => {
         if (response) {
           this.isLoggedIn = true;

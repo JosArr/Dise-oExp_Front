@@ -3,11 +3,11 @@
     <h1 class="tituloIS">Iniciar Sesion</h1>
     <div>
       <label for="email">Correo Electronico: </label>
-      <input type="email" id="email" formControlName="correo" placeholder="Ingrese su correo">
+      <input type="email" id="email" formControlName="email" placeholder="Ingrese su correo">
     </div>
     <div>
       <label for="password">Contraseña: </label>
-      <input type="password" id="password" formControlName="contrasena" placeholder="Ingrese su correo">
+      <input type="password" id="password" formControlName="password" placeholder="Ingrese su correo">
     </div>
     <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesion</button>
     <a class="redirection">
