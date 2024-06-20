@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class FoodsService {
-  private foodApiURL = 'http://localhost:8080/api/v1/foods'
+  private foodApiURL = 'https://healthfood-production-ccaa.up.railway.app/api/v1/foods'
   constructor(private http: HttpClient) { }
 
   getFoods() {

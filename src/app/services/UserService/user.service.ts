@@ -8,7 +8,7 @@ import {map, Observable} from "rxjs";
 })
 
 export class UserService {
-  private userApiURL = 'http://localhost:8080/api/v1/users';
+  private userApiURL = 'https://healthfood-production-ccaa.up.railway.app/api/v1/users';
   isLoggedIn: boolean = false;
   usuarioLogueado: any;
   constructor(private http: HttpClient) { }

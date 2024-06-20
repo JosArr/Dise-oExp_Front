@@ -27,7 +27,7 @@ export class InicioSesionComponent implements OnInit{
     if (this.loginForm.valid) {
       this.userService.getUserByEmail(this.loginForm.value.email).subscribe(user => {
         if (user && user.password === this.loginForm.value.password) {
-          alert('Inicio de sesión exitoso');
+          console.log('Inicio de sesión exitoso');
           this.userService.setUsuarioLogueado(user);
 
           this.router.navigate(['/order']);
