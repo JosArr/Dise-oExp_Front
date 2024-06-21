@@ -10,8 +10,8 @@ import {Router} from "@angular/router";
 export class ProfileComponent implements OnInit{
 
   nombreUsuario: string = '';
-  nombre: string = '';
-  apellido: string = '';
+  name: string = '';
+  last_name: string = '';
   correoElectronico: string =  '';
   telefono: string = '';
   nombreEditado: string = '';
@@ -37,10 +37,12 @@ export class ProfileComponent implements OnInit{
   ngOnInit(): void {
     const usuarioLogueado = this.userService.getUsuarioLogueado();
     if (usuarioLogueado) {
-      this.nombreUsuario = usuarioLogueado.nombre + ' ' + usuarioLogueado.apellido;
-      this.correoElectronico = usuarioLogueado.correo;
-      this.telefono = usuarioLogueado.telefono;
-      this.fotoPerfil = usuarioLogueado.perfil;
+      this.name = usuarioLogueado.name;
+      this.last_name = usuarioLogueado.last_name;
+      this.nombreUsuario = usuarioLogueado.name + ' ' + usuarioLogueado.last_name;
+      this.correoElectronico = usuarioLogueado.email;
+      this.telefono = usuarioLogueado.phone_number;
+      this.fotoPerfil = usuarioLogueado.photo;
     }
   }
   showProfilePopup() {
@@ -53,7 +55,7 @@ export class ProfileComponent implements OnInit{
     this.editandoNombre = false;
 
     const usuarioLogueado = this.userService.getUsuarioLogueado();
-    usuarioLogueado.nombre = this.nombreUsuario;
+    usuarioLogueado.name = this.nombreUsuario;
     this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
       if (response) {
         console.log('Nombre de usuario actualizado en el servidor');
@@ -68,7 +70,7 @@ export class ProfileComponent implements OnInit{
     this.editandoCorreo = false;
 
     const usuarioLogueado = this.userService.getUsuarioLogueado();
-    usuarioLogueado.correo = this.correoElectronico;
+    usuarioLogueado.email = this.correoElectronico;
     this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
       if (response) {
         console.log('Correo electrónico actualizado en el servidor');
