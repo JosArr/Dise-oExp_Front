@@ -10,14 +10,18 @@ import {Router} from "@angular/router";
 export class ProfileComponent implements OnInit{
 
   nombreUsuario: string = '';
-  name: string = '';
-  last_name: string = '';
+  nombre: string = '';
+  apellido: string = '';
   correoElectronico: string =  '';
   telefono: string = '';
   nombreEditado: string = '';
+  apellidoEditado: string = '';
   correoEditado: string = '';
+  telefonoEditado: string = '';
   editandoNombre: boolean = false;
+  editandoApellido: boolean = false;
   editandoCorreo: boolean = false;
+  editandoTelefono: boolean = false;
   fotoPerfil: string = '';
   showPopup = false;
 
@@ -37,8 +41,8 @@ export class ProfileComponent implements OnInit{
   ngOnInit(): void {
     const usuarioLogueado = this.userService.getUsuarioLogueado();
     if (usuarioLogueado) {
-      this.name = usuarioLogueado.name;
-      this.last_name = usuarioLogueado.last_name;
+      this.nombre = usuarioLogueado.name;
+      this.apellido = usuarioLogueado.last_name;
       this.nombreUsuario = usuarioLogueado.name + ' ' + usuarioLogueado.last_name;
       this.correoElectronico = usuarioLogueado.email;
       this.telefono = usuarioLogueado.phone_number;
@@ -50,12 +54,40 @@ export class ProfileComponent implements OnInit{
   }
 
 
-  guardarNombre() {
-    this.nombreUsuario = this.nombreEditado;
+  guardarDatos() {
+    this.nombre = this.nombreEditado;
     this.editandoNombre = false;
 
+    this.apellido = this.apellidoEditado;
+    this.editandoApellido = false;
+
+    this.correoElectronico = this.correoEditado;
+    this.editandoCorreo = false;
+
+    this.telefono = this.telefonoEditado;
+    this.editandoTelefono = false;
+
     const usuarioLogueado = this.userService.getUsuarioLogueado();
-    usuarioLogueado.name = this.nombreUsuario;
+    usuarioLogueado.name = this.nombre;
+    usuarioLogueado.last_name = this.apellido;
+    usuarioLogueado.email = this.correoElectronico;
+    usuarioLogueado.phone_number = this.telefono;
+
+    this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
+      if (response) {
+        console.log('Nombre de usuario actualizado en el servidor');
+      } else {
+        console.error('Error al actualizar el nombre de usuario');
+      }
+    });
+  }
+
+  /*guardarApellido() {
+    this.apellido = this.apellidoEditado;
+    this.editandoApellido = false;
+
+    const usuarioLogueado = this.userService.getUsuarioLogueado();
+    usuarioLogueado.last_name = this.apellido;
     this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
       if (response) {
         console.log('Nombre de usuario actualizado en el servidor');
@@ -80,15 +112,51 @@ export class ProfileComponent implements OnInit{
     });
   }
 
-  editarNombre() {
-    this.nombreEditado = this.nombreUsuario;
+  guardarTelefono() {
+    this.telefono = this.telefonoEditado;
+    this.editandoTelefono = false;
+
+    const usuarioLogueado = this.userService.getUsuarioLogueado();
+    usuarioLogueado.phone_number = this.telefono;
+    this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
+      if (response) {
+        console.log('Correo electrónico actualizado en el servidor');
+      } else {
+        console.error('Error al actualizar el correo electrónico');
+      }
+    });
+  }
+*/
+  editarDatos() {
+    this.nombreEditado = this.nombre;
     this.editandoNombre = true;
+
+    this.apellidoEditado = this.apellido;
+    this.editandoApellido = true;
+
+    this.correoEditado = this.correoElectronico;
+    this.editandoCorreo = true;
+
+    this.telefonoEditado = this.telefono;
+    this.editandoTelefono = true;
+  }
+
+ /* editarApellido() {
+    this.apellidoEditado = this.apellido;
+    this.editandoApellido = true;
+
+    this.nombreUsuario = this.nombreEditado + this.apellidoEditado;
   }
 
   editarCorreo() {
     this.correoEditado = this.correoElectronico;
     this.editandoCorreo = true;
   }
+
+  editarTelefono() {
+    this.telefonoEditado = this.telefono;
+    this.editandoTelefono = true;
+  }*/
 
   cerrarSesion(){
     this.userService.cerrarSesion();

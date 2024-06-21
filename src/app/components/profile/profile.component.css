@@ -44,6 +44,7 @@
   color: #8B4513;
   background-color: #FFA726;
   padding: 10px;
+  margin-top: 10px;
 }
 .update-button:hover{
   color: #28AE61;
@@ -135,6 +136,7 @@ input[type="name"], [type="lastname"], [type="email"],input[type="phone"] {
   justify-content: center;
   padding:30px;
 }
+
 .popup-profile-info p {
   font-size: 20px;
   flex: 1;
@@ -200,10 +202,19 @@ input[type="text"] {
   color: #fff;
 }
 
-
 .select-field option:checked {
   background-color: #007bff;
   color: #fff;
+}
+.popup-user-details p{
+  margin-bottom: -2px;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  color: black;
+  font-size: 14px;
 }
 .popup-user-details button.guardar {
   left: 460px;
