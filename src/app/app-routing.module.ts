@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'registro',component:RegistroComponent},
   { path: 'faq', component: FaqComponent},
   { path: 'shopcart', component: ShopCartComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'iniciosesion', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
