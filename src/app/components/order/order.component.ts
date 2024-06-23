@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { FoodsService } from '../../services/FoodService/foods.service';
+import {CartService} from "../../services/CartService/cart.service";
 
 @Component({
   selector: 'app-order',
@@ -27,7 +28,8 @@ export class OrderComponent implements OnInit {
     }
   }
 
+  cartService = inject(CartService);
   addToCart(food: any): void {
-    console.log(food);
+    this.cartService.addToCart(food);
   }
 }

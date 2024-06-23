@@ -1,10 +1,11 @@
 .SingUpScreen{
-  background: url('../../../assets/images/banner.png') no-repeat fixed;
+  background: url('../../../assets/images/banner.png') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh ;
+  height: 100vh;
 }
 form {
   border:3px solid #808000;

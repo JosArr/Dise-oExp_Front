@@ -16,4 +16,8 @@ export class CartService {
   getItems(){
     return this.items;
   }
+
+  delete(item: any) {
+    this.items = this.items.filter((i) => i.id !== item.id);
+  }
 }

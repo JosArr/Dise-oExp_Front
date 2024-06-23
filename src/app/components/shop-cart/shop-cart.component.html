@@ -1,1 +1,12 @@
-<p>shop-cart works!</p>
+<div>
+  <h1>Cart</h1>
+  @for (food of cartService.getItems(); track food.id){
+    <div class="cart-item">
+      <img src = "{{food.image}}" alt="Food Image" class="food-image">
+      <h3>{{food.name}}</h3>
+      <p>{{food.description}}</p>
+      <p>Precio: {{food.price}}</p>
+      <button (click)="deleteFromCart(food)">Delete</button>
+    </div>
+  }
+</div>

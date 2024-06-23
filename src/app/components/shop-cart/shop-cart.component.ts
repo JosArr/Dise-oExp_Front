@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {CartService} from "../../services/CartService/cart.service";
 
 @Component({
   selector: 'app-shop-cart',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop-cart.component.css']
 })
 export class ShopCartComponent {
+  cartService = inject(CartService);
 
+  deleteFromCart(food: any){
+    this.cartService.delete(food);
+  }
 }
