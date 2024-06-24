@@ -8,9 +8,17 @@
     <hr class="divider-line">
   </div>
   <div class="menu-container">
-    <button class="menu-button" *ngFor="let item of menuItems" (click)="showProfilePopup()">
+    <button class="menu-button" (click)="showProfilePopup()">
+      <i class='fa fa-user'></i>
+      <span>Mis Datos</span>
+    </button>
+    <button class="menu-button" *ngFor="let item of menuItems">
       <i class="{{ item.icon }}"></i>
       <span>{{ item.text }}</span>
+    </button>
+    <button class="menu-button" (click)="showReportProblem()">
+      <i class='fa fa-question-circle'></i>
+      <span>Ayuda</span>
     </button>
     <button class="menu-button" (click)="cerrarSesion()">
       <i class='fa fa-sign-out'></i>
@@ -47,5 +55,16 @@
         <a class="update-button" mat-button *ngIf="editandoNombre" (click)="guardarDatos()">Actualizar Datos</a>
       </div>
     </div>
+  </div>
+</div>
+<div  class="report-problem-popup" *ngIf="showReportProblemPopup">
+  <div class="problem-container">
+    <h2>Detalles del problema:</h2>
+    <textarea v-model="detallesProblema" rows="4"></textarea>
+    <button class="button-not" mat-button (click)="showAlert()">Notificar</button>
+  </div>
+  <div class="alert-popup" *ngIf="showAlertPopup">
+    <i class="fa fa-xmark-circle" (click)="closeAlert()"></i>
+    <p>Su reporte se registró exitosamente.</p>
   </div>
 </div>

@@ -23,15 +23,15 @@ export class ProfileComponent implements OnInit{
   editandoCorreo: boolean = false;
   editandoTelefono: boolean = false;
   fotoPerfil: string = '';
-  showPopup = false;
+  showPopup: boolean = false;
+  showAlertPopup: boolean = false;
+  showReportProblemPopup: boolean = false;
 
   constructor(private userService: UserService, private router: Router) {}
 
   menuItems = [
-    { icon: 'fa fa-user', text: 'Mis Datos' },
     { icon: 'fa fa-lock', text: 'Acceso y Seguridad' },
     { icon: 'fa fa-cog', text: 'Configuración' },
-    { icon: 'fa fa-question-circle', text: 'Ayuda' }
   ];
 
   onSelect(item: any): void {
@@ -51,8 +51,21 @@ export class ProfileComponent implements OnInit{
   }
   showProfilePopup() {
     this.showPopup = !this.showPopup;
+    this.showReportProblemPopup = false;
   }
 
+  showReportProblem(){
+    this.showReportProblemPopup = !this.showReportProblemPopup;
+    this.showPopup = false;
+  }
+
+  showAlert() {
+    this.showAlertPopup =!this.showAlertPopup;
+  }
+
+  closeAlert(){
+    this.showAlertPopup = false;
+  }
 
   guardarDatos() {
     this.nombre = this.nombreEditado;
@@ -81,52 +94,6 @@ export class ProfileComponent implements OnInit{
       }
     });
   }
-
-  /*guardarApellido() {
-    this.apellido = this.apellidoEditado;
-    this.editandoApellido = false;
-
-    const usuarioLogueado = this.userService.getUsuarioLogueado();
-    usuarioLogueado.last_name = this.apellido;
-    this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
-      if (response) {
-        console.log('Nombre de usuario actualizado en el servidor');
-      } else {
-        console.error('Error al actualizar el nombre de usuario');
-      }
-    });
-  }
-
-  guardarCorreo() {
-    this.correoElectronico = this.correoEditado;
-    this.editandoCorreo = false;
-
-    const usuarioLogueado = this.userService.getUsuarioLogueado();
-    usuarioLogueado.email = this.correoElectronico;
-    this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
-      if (response) {
-        console.log('Correo electrónico actualizado en el servidor');
-      } else {
-        console.error('Error al actualizar el correo electrónico');
-      }
-    });
-  }
-
-  guardarTelefono() {
-    this.telefono = this.telefonoEditado;
-    this.editandoTelefono = false;
-
-    const usuarioLogueado = this.userService.getUsuarioLogueado();
-    usuarioLogueado.phone_number = this.telefono;
-    this.userService.editarUsuario(usuarioLogueado).subscribe(response => {
-      if (response) {
-        console.log('Correo electrónico actualizado en el servidor');
-      } else {
-        console.error('Error al actualizar el correo electrónico');
-      }
-    });
-  }
-*/
   editarDatos() {
     this.nombreEditado = this.nombre;
     this.editandoNombre = true;
@@ -141,22 +108,6 @@ export class ProfileComponent implements OnInit{
     this.editandoTelefono = true;
   }
 
- /* editarApellido() {
-    this.apellidoEditado = this.apellido;
-    this.editandoApellido = true;
-
-    this.nombreUsuario = this.nombreEditado + this.apellidoEditado;
-  }
-
-  editarCorreo() {
-    this.correoEditado = this.correoElectronico;
-    this.editandoCorreo = true;
-  }
-
-  editarTelefono() {
-    this.telefonoEditado = this.telefono;
-    this.editandoTelefono = true;
-  }*/
 
   cerrarSesion(){
     this.userService.cerrarSesion();
