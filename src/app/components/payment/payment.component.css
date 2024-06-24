@@ -15,34 +15,80 @@
   width: 85%;
 }
 
+.formas-de-pago{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
 .button-div{
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.cuentas{
-  margin-top: 120px;
-  margin-left: 50px;
+.cuentas, .yape{
+  margin-top: 30px;
+  margin-left: 40px;
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.pay{
+.yape{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+.cuentas p, .yape p{
   color: #8B4513;
-  background-color: #FFA726;
-  padding: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.button-div input[type="file"] {
+  position: absolute;
+  width: 166px;
+  height: 40px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #8B4513;
   border-radius: 20px;
-  margin-top: 50px;
-  text-align: center;
+  cursor: pointer;
 }
 
-.pay:hover{
+.end-payment-button {
+  position: absolute;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: orange;
   color: #8B4513;
-  background-color: #F2F2F2;
-  border: 2px solid #FFA726;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  width: 166px;
 }
 
-.deposita, .data-cuenta, .data-interbancaria, .data-cuenta h4, .data-interbancaria h4{
+.end-payment-button:hover {
+  background-color: #FFFFFF;
+  color: #8B4513;
+  border: 2px solid #007BFF;
+}
+
+.deposita, .data-cuenta, .data-interbancaria, .data-cuenta h4, .data-interbancaria h4 {
   color: #8B4513;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -72,3 +118,51 @@
 }
 
 
+.qr-image {
+  width: 250px;
+  height: 250px;
+  position:relative;
+  margin-left: 30px;
+}
+
+.idk-div{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-popup {
+  color: #8B4513;
+  height: 500px;
+  width: 65%;
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  background-color: #7EC8E3;
+  border: 3px solid #FFA726;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+
+.check-popup i {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.check-popup p {
+  margin-bottom: 20px;
+}
+
+.check-popup i.fa-circle-xmark {
+  margin-top: 80px;
+  cursor: pointer;
+  font-size: 14px;
+}

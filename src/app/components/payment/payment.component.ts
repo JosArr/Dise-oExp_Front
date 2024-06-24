@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent {
+  showPopup: boolean = false;
 
+  popUpEnd() {
+    this.showPopup = !this.showPopup;
+  }
 }
