@@ -1,12 +1,45 @@
-<div>
-  <h1>Cart</h1>
-  @for (food of cartService.getItems(); track food.id){
-    <div class="cart-item">
-      <img src = "{{food.image}}" alt="Food Image" class="food-image">
-      <h3>{{food.name}}</h3>
-      <p>{{food.description}}</p>
-      <p>Precio: {{food.price}}</p>
-      <button (click)="deleteFromCart(food)">Delete</button>
+<section class="CartSection">
+  <div class="cart-info">
+    <h1>Tu Pedido</h1>
+    @for (food of cartService.getItems(); track food.id){
+      <div class="cart-item">
+        <img src="{{food.image}}" alt="Food Image" class="food-image">
+        <div class="item-details">
+          <h3>{{food.name}}</h3>
+          <p>{{food.description}}</p>
+          <p>Precio: S/. {{food.price}}</p>
+          <p>Cantidad: {{food.quantity}}</p>
+        </div>
+        <div class="action-buttons">
+          <div>
+            <button class="delete-button" (click)="deleteFromCart(food)">Delete</button>
+          </div>
+          <div class="increment-decrement">
+            <button class="increment-button" (click)="cartService.incrementQuantity(food.id)">+</button>
+            <button class="decrement-button" (click)="cartService.decrementQuantity(food.id)">-</button>
+          </div>
+        </div>
+      </div>
+    }
+    <div class="orders-details">
+      <div class="direction">
+        <i class="fa fa-map-location-dot"></i>
+        <span>Dirección: {{ubicacion}}</span>
+      </div>
+      <div class="hora">
+        <i class="fa-regular fa-clock"></i>
+        <span>Hora estimada de llegada: </span>
+        <input type="text">
+      </div>
+      <div>
+        <h3>Total: S/. {{cartService.getTotal()}}</h3>
+      </div>
+      <div>
+        <h3>Total: {{cartService.getTotalCal()}} calorías</h3>
+      </div>
+      <div class="payment-button">
+        <button mat-button (click)="payment()">Pagar</button>
+      </div>
     </div>
-  }
-</div>
+  </div>
+</section>

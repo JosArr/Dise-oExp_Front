@@ -1,17 +1,155 @@
-.food-image{
-  border-radius: 70%;
-  width: 100px;
-  height: 100px;
+.CartSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #d3f2ce;
+  padding: 50px;
 }
 
-.cart-item{
-  border: 1px solid #007BFF;
+.cart-info {
+  background-color: #97e896;
+  padding: 30px;
+  border: 3px solid #d4e157;
+  border-radius: 35px;
+  width: 95%;
+  height: 90%;
+  color: #8b4513;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.cart-info h1 {
+  color: #8B4513;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alineación de elementos */
+  border: 1px solid #007bff;
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-div{
-  margin: 20px;
+.food-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
 }
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.item-details > div {
+  margin-bottom: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.increment-decrement {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.delete-button,
+.increment-button,
+.decrement-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.delete-button {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.increment-decrement {
+  display: flex;
+}
+
+.increment-button,
+.decrement-button {
+  width: 45px;
+  margin-right: 10px;
+}
+
+.direction, .hora {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.direction i, .hora i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.direction span, .hora span{
+  font-weight: 500;
+}
+
+.hora {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.hora input[type="text"] {
+  margin-left: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  border: 1px solid #039be5;
+  color: black;
+}
+
+.payment-button{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-button button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #8B4513;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.payment-button button:hover{
+  background-color: #FFFFFF;
+  color: #8B4513;
+  border: 2px solid #007BFF;
+}
+
+.orders-details{
+  padding: 10px;
+}
+
